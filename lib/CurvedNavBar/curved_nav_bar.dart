@@ -15,7 +15,7 @@ class CurvedNavBar extends StatefulWidget {
 
 class _CurvedNavBarState extends State<CurvedNavBar> {
   final navigationKey = GlobalKey<CurvedNavigationBarState>();
-  int index = 2;
+  int index = 0;
   final screens = [
     HomePage(),
     SearchPage(),
@@ -35,7 +35,7 @@ class _CurvedNavBarState extends State<CurvedNavBar> {
         size: 30,
       ),
       Icon(
-        Icons.favorite,
+        Icons.add_circle_outline_rounded,
         size: 30,
       ),
       Icon(
@@ -49,57 +49,20 @@ class _CurvedNavBarState extends State<CurvedNavBar> {
     ];
 
     return Container(
-      color: Colors.blue,
+      color: Color.fromRGBO(40, 133, 198, 1),
       child: SafeArea(
         child: ClipRRect(
           child: Scaffold(
             extendBody: true,
             backgroundColor: Colors.red,
-            appBar: AppBar(
-              title: Text('Curved Navigation Bar'),
-              elevation: 0,
-              centerTitle: true,
-            ),
             body: screens[index],
-            // Center(
-            //   child: Column(
-            //     children: [
-            //       Text('$index',
-            //           style: TextStyle(
-            //             color: Colors.white,
-            //             fontSize: 120,
-            //             fontWeight: FontWeight.bold,
-            //           )),
-            //       SizedBox(height: 16),
-            //       ElevatedButton(
-            //         style: ElevatedButton.styleFrom(
-            //           onPrimary: Colors.black,
-            //           primary: Colors.white,
-            //           minimumSize: Size(250, 56),
-            //         ),
-            //         child: Text(
-            //           'Go to 0',
-            //           style: TextStyle(fontSize: 32),
-            //         ),
-            //         onPressed: () {
-            //           final navigationState = navigationKey.currentState!;
-            //           navigationState.setPage(0);
-            //         },
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            // Image.network('https://images.unsplash.com/photo-1483884105135-c06ea81a7a80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHdvbWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
-            // fit:BoxFit.cover,
-            // height:double.infinity,
-            // width:double.infinity),
             bottomNavigationBar: Theme(
               data: Theme.of(context)
                   .copyWith(iconTheme: IconThemeData(color: Colors.white)),
               child: CurvedNavigationBar(
                 key: navigationKey,
-                color: Colors.blue,
-                buttonBackgroundColor: Colors.purple,
+                color: Color.fromRGBO(40, 133, 198, 1),
+                buttonBackgroundColor: Color.fromRGBO(219, 91, 159, 1),
                 backgroundColor: Colors.transparent,
                 height: 60,
                 animationCurve: Curves.easeInOut,
